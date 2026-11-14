@@ -1,0 +1,20 @@
+{
+  "name": "invoice-to-payment-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Validate invoice details and prepare unsigned native PROS transactions for Pharos Pacific Mainnet",
+  "scripts": {
+    "test": "node test/index.test.mjs",
+    "build": "wrangler pages functions build --project-directory=.",
+    "check": "npm test && npm run build",
+    "dev": "wrangler pages dev ./public --port=8788",
+    "start": "npm run dev",
+    "deploy": "npm run check && wrangler pages deploy ./public --project-name=invoice-to-payment-agent"
+  },
+  "devDependencies": {
+    "wrangler": "4.162.0"
+  },
+  "keywords": ["pharos", "invoices", "payments", "pros", "agent"],
+  "author": "Pharos Builder",
+  "license": "MIT"
+}
